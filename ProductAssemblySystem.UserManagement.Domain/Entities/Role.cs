@@ -7,10 +7,10 @@ namespace ProductAssemblySystem.UserManagement.Domain.Entities
         public int Id { get; }
         public string Name { get; } = string.Empty;
 
-        private List<Permission> _permissions = [];
+        private readonly List<Permission> _permissions = [];
         public IReadOnlyList<Permission> Permissions => _permissions;
 
-        private List<User> _users = [];
+        private readonly List<User> _users = [];
         public IReadOnlyList<User> Users => _users;
 
         private Role()

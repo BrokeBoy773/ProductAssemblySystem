@@ -13,7 +13,7 @@ namespace ProductAssemblySystem.UserManagement.Domain.Entities
         public Address Address { get; private set; } = null!;
         public PasswordHash PasswordHash { get; private set; } = null!;
 
-        private List<Role> _roles = [];
+        private readonly List<Role> _roles = [];
         public IReadOnlyList<Role> Roles => _roles;
     
         private User()

@@ -3,21 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.API", "ProductAssemblySystem.API\ProductAssemblySystem.API.csproj", "{5945A9D2-6C43-435C-BBBC-DCD6149070EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.API", "ProductAssemblySystem.API\ProductAssemblySystem.API.csproj", "{5945A9D2-6C43-435C-BBBC-DCD6149070EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.UserManagement.Domain", "ProductAssemblySystem.UserManagement.Domain\ProductAssemblySystem.UserManagement.Domain.csproj", "{E8A35DD8-EA14-4FF1-83B4-1F855E017C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.UserManagement.Domain", "ProductAssemblySystem.UserManagement.Domain\ProductAssemblySystem.UserManagement.Domain.csproj", "{E8A35DD8-EA14-4FF1-83B4-1F855E017C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.UserManagement.Domain.Tests", "ProductAssemblySystem.UserManagement.Domain.Tests\ProductAssemblySystem.UserManagement.Domain.Tests.csproj", "{8F9053C8-8D37-47E2-ADE8-6E7C380C32A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.UserManagement.Domain.Tests", "ProductAssemblySystem.UserManagement.Domain.Tests\ProductAssemblySystem.UserManagement.Domain.Tests.csproj", "{8F9053C8-8D37-47E2-ADE8-6E7C380C32A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductAssemblySystem.UserManagement", "ProductAssemblySystem.UserManagement", "{12E2561C-C751-4D7D-94DD-C568DB2CDA0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.UserManagement.Infrastructure", "ProductAssemblySystem.UserManagement.Infrastructure\ProductAssemblySystem.UserManagement.Infrastructure.csproj", "{74A6056E-3E4F-46C1-A89C-3A38E43F62B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.UserManagement.Infrastructure", "ProductAssemblySystem.UserManagement.Infrastructure\ProductAssemblySystem.UserManagement.Infrastructure.csproj", "{74A6056E-3E4F-46C1-A89C-3A38E43F62B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.UserManagement.Infrastructure.Tests", "ProductAssemblySystem.UserManagement.Infrastructure.Tests\ProductAssemblySystem.UserManagement.Infrastructure.Tests.csproj", "{A31BF0E9-B470-43CE-8529-FB1B374089A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.UserManagement.Infrastructure.Tests", "ProductAssemblySystem.UserManagement.Infrastructure.Tests\ProductAssemblySystem.UserManagement.Infrastructure.Tests.csproj", "{A31BF0E9-B470-43CE-8529-FB1B374089A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.UserManagement.Application", "ProductAssemblySystem.UserManagement.Application\ProductAssemblySystem.UserManagement.Application.csproj", "{D4DB381D-68CB-48E0-BFE3-6FAF357B60F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.UserManagement.Application", "ProductAssemblySystem.UserManagement.Application\ProductAssemblySystem.UserManagement.Application.csproj", "{D4DB381D-68CB-48E0-BFE3-6FAF357B60F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.UserManagement.Application.Tests", "ProductAssemblySystem.UserManagement.Application.Tests\ProductAssemblySystem.UserManagement.Application.Tests.csproj", "{D0042D17-38E6-4AF3-9858-7B4F7BAC40BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAssemblySystem.UserManagement.Application.Tests", "ProductAssemblySystem.UserManagement.Application.Tests\ProductAssemblySystem.UserManagement.Application.Tests.csproj", "{D0042D17-38E6-4AF3-9858-7B4F7BAC40BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductAssemblySystem.AssemblyManagement", "ProductAssemblySystem.AssemblyManagement", "{E15390F5-E535-487E-9DC2-87EB9113EF9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.AssemblyManagement.Domain", "ProductAssemblySystem.AssemblyManagement.Domain\ProductAssemblySystem.AssemblyManagement.Domain.csproj", "{87DBB160-F960-4F75-A8D2-1D562626B92C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductAssemblySystem.AssemblyManagement.Domain.Tests", "ProductAssemblySystem.AssemblyManagement.Domain.Tests\ProductAssemblySystem.AssemblyManagement.Domain.Tests.csproj", "{5529958A-B281-4A3C-A9CF-D1C105642E7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +59,14 @@ Global
 		{D0042D17-38E6-4AF3-9858-7B4F7BAC40BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0042D17-38E6-4AF3-9858-7B4F7BAC40BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0042D17-38E6-4AF3-9858-7B4F7BAC40BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DBB160-F960-4F75-A8D2-1D562626B92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DBB160-F960-4F75-A8D2-1D562626B92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DBB160-F960-4F75-A8D2-1D562626B92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DBB160-F960-4F75-A8D2-1D562626B92C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5529958A-B281-4A3C-A9CF-D1C105642E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5529958A-B281-4A3C-A9CF-D1C105642E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5529958A-B281-4A3C-A9CF-D1C105642E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5529958A-B281-4A3C-A9CF-D1C105642E7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +78,8 @@ Global
 		{A31BF0E9-B470-43CE-8529-FB1B374089A5} = {12E2561C-C751-4D7D-94DD-C568DB2CDA0A}
 		{D4DB381D-68CB-48E0-BFE3-6FAF357B60F6} = {12E2561C-C751-4D7D-94DD-C568DB2CDA0A}
 		{D0042D17-38E6-4AF3-9858-7B4F7BAC40BF} = {12E2561C-C751-4D7D-94DD-C568DB2CDA0A}
+		{87DBB160-F960-4F75-A8D2-1D562626B92C} = {E15390F5-E535-487E-9DC2-87EB9113EF9D}
+		{5529958A-B281-4A3C-A9CF-D1C105642E7E} = {E15390F5-E535-487E-9DC2-87EB9113EF9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {199749A0-E0EC-43B1-AB0C-CC883884B5D7}

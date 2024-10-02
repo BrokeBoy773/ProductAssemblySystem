@@ -7,7 +7,7 @@ namespace ProductAssemblySystem.UserManagement.Domain.Entities
         public int Id { get; }
         public string Name { get; } = string.Empty;
 
-        private List<Role> _roles = [];
+        private readonly List<Role> _roles = [];
         public IReadOnlyList<Role> Roles => _roles;
 
         private Permission()
