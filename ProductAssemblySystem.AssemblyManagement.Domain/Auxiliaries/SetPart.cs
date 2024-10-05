@@ -1,4 +1,4 @@
-﻿namespace ProductAssemblySystem.AssemblyManagement.Domain.Entities
+﻿namespace ProductAssemblySystem.AssemblyManagement.Domain.Auxiliaries
 {
     public class SetPart
     {

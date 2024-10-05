@@ -7,16 +7,20 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Tests.EntitiesTests
     public class SetTests
     {
         [Fact]
-        public void CombinePartsBuildTime_WithThreeParts_ReturnsTimeSpan()
+        public void AddPart_WithValidInput_ReturnsUpdatedSet()
         {
             Result<Part, List<string>> resultPart1 = Part.Create(Guid.NewGuid(), "Деталь #1", "01:12:02");
             Result<Part, List<string>> resultPart2 = Part.Create(Guid.NewGuid(), "Деталь #2", "09:05:10");
+
+            string itemName = "Набор";
+
+            Result<Set, List<string>> resultSet = Set.Create(Guid.NewGuid(), itemName, [resultPart1.Value, resultPart2.Value]);
+
             Result<Part, List<string>> resultPart3 = Part.Create(Guid.NewGuid(), "Деталь #3", "02:30:33");
 
-            Result<TimeSpan> resultTimeSpan = Set.CombinePartsBuildTime([resultPart1.Value, resultPart2.Value, resultPart3.Value]);
+            resultSet.Value.AddPart(resultPart3.Value);
 
-            Assert.True(resultTimeSpan.IsSuccess);
-            Assert.Equal(TimeSpan.Parse("12:47:45"), resultTimeSpan.Value);
+            Assert.Contains(resultPart3.Value, resultSet.Value.Parts);
         }
 
         [Fact]

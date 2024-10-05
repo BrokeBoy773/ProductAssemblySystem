@@ -7,10 +7,25 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Entities
         public Guid Id { get; }
         public Name Name { get; private set; } = null!;
 
-        private readonly List<Set> _sets = [];
-        public IReadOnlyList<Set> Sets => _sets;
+        public Employee Supervisor { get; private set; } = null!;
 
-        private readonly List<Part> _parts = [];
-        public IReadOnlyList<Part> Parts => _parts;
+        private readonly List<Employee> _workers = [];
+        public IReadOnlyList<Employee> Workers => _workers;
+
+        private readonly List<Set> _producеSets = [];
+        public IReadOnlyList<Set> ProducеSets => _producеSets;
+
+        private readonly List<Part> _producеParts = [];
+        public IReadOnlyList<Part> ProducеParts => _producеParts;
+
+        public Storage Storage { get; private set; } = null!;
+
+        public Order CurrentOrder { get; private set; } = null!;
+
+        private readonly List<Order> _completedOrders = [];
+        public IReadOnlyList<Order> CompletedOrders => _completedOrders;
+
+        private readonly List<Order> _cancelledOrders = [];
+        public IReadOnlyList<Order> CancelledOrders => _cancelledOrders;
     }
 }

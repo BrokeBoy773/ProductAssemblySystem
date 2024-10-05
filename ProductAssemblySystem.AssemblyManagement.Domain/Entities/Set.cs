@@ -42,17 +42,14 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Entities
                 errorsList.AddRange(resultName.Error);
 
 
+            if (setParts is null || setParts.Count <= 1)
+                errorsList.Add("setParts list is null or contains fewer than two elements");
+
             if (errorsList.Count > 0)
                 return Result.Failure<Set, List<string>>(errorsList);
 
-            if (setParts is null || setParts.Count <= 1)
-            {
-                errorsList.Add("setParts list is null or contains fewer than two elements");
-                return Result.Failure<Set, List<string>>(errorsList);
-            }
 
-
-            Result<TimeSpan> resultBuildTime = CombinePartsBuildTime(setParts);
+            Result<TimeSpan> resultBuildTime = CombinePartsBuildTime(setParts!);
 
             if (resultBuildTime.IsFailure)
             {
@@ -64,16 +61,26 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Entities
                 id,
                 resultName.Value,
                 resultBuildTime.Value,
-                setParts);
+                setParts!);
 
             return Result.Success<Set, List<string>>(validSet);
         }
 
-        public static Result<TimeSpan> CombinePartsBuildTime(List<Part> setParts)
+        private static Result<TimeSpan> CombinePartsBuildTime(List<Part> setParts)
         {
             return setParts
                 .Select(p => p.BuildTime.Time)
                 .Aggregate(TimeSpan.Zero, (total, next) => total + next);
+        }
+
+        public Result AddPart(Part part)
+        {
+            if (part is null)
+                return Result.Failure("part is null");
+
+            _parts.Add(part);
+
+            return Result.Success();
         }
     }
 }
