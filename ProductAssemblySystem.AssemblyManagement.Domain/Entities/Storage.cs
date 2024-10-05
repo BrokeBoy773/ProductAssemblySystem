@@ -20,11 +20,11 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Entities
             Id = id;
         }
 
-        public static Result<Storage> Create(Guid id)
+        public static Result<Storage, List<string>> Create(Guid id)
         {
             Storage validStorage = new(id);
 
-            return Result.Success(validStorage);
+            return Result.Success<Storage, List<string>>(validStorage);
         }
     }
 }

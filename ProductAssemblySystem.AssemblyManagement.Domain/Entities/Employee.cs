@@ -6,32 +6,50 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Entities
     public class Employee
     {
         public Guid Id { get; }
-        public AssemblySite AssemblySite { get; private set; } = null!;
+        public AssemblySite? AssemblySite { get; private set; }
         public Position Position { get; private set; }
 
         private Employee(
             Guid id,
-            AssemblySite assemblySite,
-            Position position)
+            Position position,
+            AssemblySite? assemblySite = null)
         {
             Id = id;
             AssemblySite = assemblySite;
             Position = position;
         }
 
-        public static Result<Employee> Create(Guid id, AssemblySite assemblySite, Position position)
+        public static Result<Employee, List<string>> Create(Guid id, Position position, AssemblySite? assemblySite = null)
         {
+            List<string> errorsList = [];
+            Employee validEmployee;
+
+            if (assemblySite == null)
+            {
+                validEmployee = new(
+                    id,
+                    position,
+                    assemblySite);
+
+                return Result.Success<Employee, List<string>>(validEmployee);
+            }
+
+
             Result<AssemblySite> resultAssemblySite = ValidateAssemblySite(assemblySite);
 
             if (resultAssemblySite.IsFailure)
-                return Result.Failure<Employee>(resultAssemblySite.Error);
+                errorsList.Add(resultAssemblySite.Error);
 
-            Employee validEmployee = new(
+
+            if (errorsList.Count > 0)
+                return Result.Failure<Employee, List<string>>(errorsList);
+
+            validEmployee = new(
                 id,
-                resultAssemblySite.Value,
-                position);
+                position,
+                resultAssemblySite.Value);
 
-            return Result.Success(validEmployee);
+            return Result.Success<Employee, List<string>>(validEmployee);
         }
 
         private static Result<AssemblySite> ValidateAssemblySite(AssemblySite assemblySite)

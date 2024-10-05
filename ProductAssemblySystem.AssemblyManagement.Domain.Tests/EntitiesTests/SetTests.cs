@@ -12,7 +12,7 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Tests.EntitiesTests
             Result<Part, List<string>> resultPart1 = Part.Create(Guid.NewGuid(), "Деталь #1", "01:12:02");
             Result<Part, List<string>> resultPart2 = Part.Create(Guid.NewGuid(), "Деталь #2", "09:05:10");
 
-            string itemName = "Набор";
+            string itemName = "Комплект";
 
             Result<Set, List<string>> resultSet = Set.Create(Guid.NewGuid(), itemName, [resultPart1.Value, resultPart2.Value]);
 
@@ -29,7 +29,7 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Tests.EntitiesTests
             Result<Part, List<string>> resultPart1 = Part.Create(Guid.NewGuid(), "Деталь #1", "01:22:31");
             Result<Part, List<string>> resultPart2 = Part.Create(Guid.NewGuid(), "Деталь #2", "02:14:52");
 
-            string itemName = "Набор";
+            string itemName = "Комплект";
 
             Result<Set, List<string>> resultSet = Set.Create(Guid.NewGuid(), itemName, [resultPart1.Value, resultPart2.Value]);
 
@@ -39,7 +39,7 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Tests.EntitiesTests
         [Fact]
         public void CreateSet_WithoutParts_ReturnsSet()
         {
-            string itemName = "Набор";
+            string itemName = "Комплект";
 
             Result<Set, List<string>> resultSet = Set.Create(Guid.NewGuid(), itemName, []);
 
@@ -51,7 +51,7 @@ namespace ProductAssemblySystem.AssemblyManagement.Domain.Tests.EntitiesTests
         {
             Result<Part, List<string>> resultPart1 = Part.Create(Guid.NewGuid(), "Деталь #1", "01:22:31");
 
-            string itemName = "Набор";
+            string itemName = "Комплект";
 
             Result<Set, List<string>> resultSet = Set.Create(Guid.NewGuid(), itemName, [resultPart1.Value]);
 
